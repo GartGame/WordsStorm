@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Words Storm</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap&subset=latin,cyrillic" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #001b44, #1976d2);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      padding: 20px;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screenshots-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex: 1;
+      min-width: 320px;
+      padding-top: 80px;
+    }
+
+    .screenshot {
+	  height: 500px;
+	  border-radius: 0;
+	  filter: drop-shadow(0px 8px 25px rgba(0, 0, 0, 0.4));
+	  z-index: 1;
+	  position: relative;
+	  transition: transform 0.3s ease;
+	}
+    .screenshot.left {
+      transform: translateX(-60px);
+    }
+
+    .screenshot.right {
+      transform: translateX(60px);
+    }
+
+    .screenshot.center {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 550px;
+      z-index: 2;
+    }
+
+    .info {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .buttons a {
+      display: block;
+      max-width: 180px;
+      flex: 1;
+    }
+
+    .buttons a img {
+      width: 100%;
+      height: 60px;
+      object-fit: contain;
+      display: block;
+      background: white;
+      border-radius: 12px;
+    }
+
+    .links {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      font-size: 0.9em;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .links a {
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .links a:hover {
+      color: #aad8ff;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .screenshots-wrapper {
+        padding-top: 80px;
+      }
+
+      .screenshot {
+        height: 350px;
+      }
+
+      .screenshot.center {
+        height: 400px;
+      }
+
+      .screenshot.left {
+        transform: translateX(-40px);
+      }
+
+      .screenshot.right {
+        transform: translateX(40px);
+      }
+
+      .title {
+        font-size: 2.2em;
+      }
+
+      .buttons a {
+        max-width: 140px;
+      }
+
+      .buttons a img {
+        height: 50px;
+      }
+
+      .links {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .screenshots-wrapper {
+        padding-top: 60px;
+      }
+
+      .screenshot {
+        height: 250px;
+      }
+
+      .screenshot.center {
+        height: 300px;
+      }
+
+      .screenshot.left {
+        transform: translateX(-20px);
+      }
+
+      .screenshot.right {
+        transform: translateX(20px);
+      }
+
+      .buttons {
+        gap: 10px;
+      }
+    }
+
+    /* Горизонтальная ориентация — сдвиг вправо */
+    @media screen and (orientation: landscape) and (min-width: 768px) {
+      .info {
+        transform: translateX(100px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="screenshots-wrapper">
+      <img src="screenshot1.png" alt="Screenshot 1" class="screenshot left" />
+      <img src="screenshot2.png" alt="Screenshot 2" class="screenshot right" />
+      <img src="screenshot_center.png" alt="Screenshot Center" class="screenshot center" />
+    </div>
+    <div class="info">
+      <div class="title">Words Storm</div>
+      <div class="buttons">
+        <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.example.wordsstorm" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" />
+        </a>
+      </div>
+      <div class="links">
+        <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
